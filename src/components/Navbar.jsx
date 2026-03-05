@@ -5,6 +5,7 @@ import { Menu, X, Building2, CalendarDays, Megaphone } from 'lucide-react'
 const navLinks = [
   { label: 'Municipio', href: '#municipio' },
   { label: 'Ulaca', href: '#ulaca' },
+  { label: 'Agenda', href: '#agenda' },
   { label: 'Naturaleza', href: '#naturaleza' },
   { label: 'Contacto', href: '#contacto' },
 ]

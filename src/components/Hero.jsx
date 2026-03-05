@@ -1,8 +1,6 @@
 import { motion } from 'framer-motion'
 import { ChevronDown, MapPin } from 'lucide-react'
-
-// FOTO: Sierra de la Paramera vista panorámica — Wikimedia Commons CC BY-SA
-// Autor: Diego Delso — https://commons.wikimedia.org/wiki/File:Sierra_de_la_Paramera_5.jpg
+import portada from '../assets/images/portada-solosancho.png'
 
 const stats = [
   { value: '~1.000', label: 'Habitantes' },
@@ -25,14 +23,15 @@ export default function Hero() {
   return (
     <section className="relative min-h-svh flex flex-col justify-center overflow-hidden">
 
-      {/* ── Imagen de fondo: Sierra de la Paramera (Wikimedia CC BY-SA) ── */}
+      {/* ── Foto aérea de Solosancho (imagen del Ayuntamiento) ── */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url("/images/paramera.jpg")', backgroundPosition: 'center 40%' }}
+        style={{ backgroundImage: `url(${portada})` }}
       />
 
-      {/* Overlay multicapa para contraste de texto */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/55 to-granite-950" />
+      {/* Overlay oscuro para contraste perfecto del texto */}
+      <div className="absolute inset-0 bg-black/50" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-granite-950" />
       <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent" />
 
       {/* Glow dorado sutil */}
@@ -124,7 +123,7 @@ export default function Hero() {
 
         {/* Crédito fotográfico */}
         <motion.p variants={itemVariants} className="mt-10 text-white/25 text-[10px] tracking-wide">
-          Foto: Sierra de la Paramera · Diego Delso, CC BY-SA · Wikimedia Commons
+          Foto aérea · Ayuntamiento de Solosancho
         </motion.p>
       </motion.div>
 

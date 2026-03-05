@@ -3,6 +3,7 @@ import Hero from './components/Hero'
 import QuickAccess from './components/QuickAccess'
 import Nucleos from './components/Nucleos'
 import Ulaca from './components/Ulaca'
+import AgendaCultural from './components/AgendaCultural'
 import Naturaleza from './components/Naturaleza'
 import Footer from './components/Footer'
 
@@ -15,6 +16,7 @@ function App() {
         <QuickAccess />
         <Nucleos />
         <Ulaca />
+        <AgendaCultural />
         <Naturaleza />
       </main>
       <Footer />
