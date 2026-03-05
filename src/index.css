@@ -1,1 +1,53 @@
 @import "tailwindcss";
+
+@theme {
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  --color-granite-50:  #f8f7f5;
+  --color-granite-100: #eeebe7;
+  --color-granite-200: #ddd8d0;
+  --color-granite-300: #c4bdb2;
+  --color-granite-400: #a89e91;
+  --color-granite-500: #978673;
+  --color-granite-600: #7a6b5a;
+  --color-granite-700: #64574a;
+  --color-granite-800: #534940;
+  --color-granite-900: #453d37;
+  --color-granite-950: #1e1a16;
+
+  --color-sierra-50:  #f3f8ed;
+  --color-sierra-100: #e3f0d3;
+  --color-sierra-200: #c8e2ac;
+  --color-sierra-300: #a3ce7b;
+  --color-sierra-400: #7fb550;
+  --color-sierra-500: #5e9933;
+  --color-sierra-600: #487826;
+  --color-sierra-700: #395e20;
+  --color-sierra-800: #2f4c1d;
+  --color-sierra-900: #27401b;
+  --color-sierra-950: #11220a;
+
+  --color-gold-50:  #fdf8e8;
+  --color-gold-100: #f9eec4;
+  --color-gold-200: #f2db8c;
+  --color-gold-300: #e9c24a;
+  --color-gold-400: #dfa61f;
+  --color-gold-500: #c88a10;
+  --color-gold-600: #a86c0c;
+  --color-gold-700: #834e0e;
+  --color-gold-800: #6c3f13;
+  --color-gold-900: #5c3516;
+  --color-gold-950: #351a08;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: #1e1a16;
+  color: #c4bdb2;
+  font-family: 'Inter', system-ui, sans-serif;
+}

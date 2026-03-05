@@ -1,8 +1,24 @@
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import QuickAccess from './components/QuickAccess'
+import Nucleos from './components/Nucleos'
+import Ulaca from './components/Ulaca'
+import Naturaleza from './components/Naturaleza'
+import Footer from './components/Footer'
+
 function App() {
   return (
-    <div className="min-h-screen bg-white text-gray-900">
-      <h1 className="text-4xl font-bold text-center pt-20">web-solosancho</h1>
-    </div>
+    <>
+      <Navbar />
+      <main>
+        <Hero />
+        <QuickAccess />
+        <Nucleos />
+        <Ulaca />
+        <Naturaleza />
+      </main>
+      <Footer />
+    </>
   )
 }
 
