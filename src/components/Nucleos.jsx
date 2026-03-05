@@ -14,7 +14,7 @@ const nucleos = [
     role: 'Capital del municipio',
     icon: Landmark,
     description:
-      'Núcleo principal y sede del Ayuntamiento. Junto a la iglesia de San Juan Evangelista se conserva un verraco vetón recuperado del Castro de Ulaca: escultura de granito que atestigua la presencia milenaria de los vetones en estas tierras.',
+      'Núcleo principal y sede del Ayuntamiento. Junto a la iglesia de Santo Tomás Apóstol se conserva un verraco vetón recuperado del Castro de Ulaca: escultura de granito que atestigua la presencia milenaria de los vetones en estas tierras.',
     accent: 'text-granite-300',
     border: 'border-white/10',
     bg: 'rgba(30,26,22,0.80)',

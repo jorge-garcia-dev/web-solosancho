@@ -20,6 +20,7 @@ const eventos = [
       'El Castro de Ulaca revive cada verano con la magia vetona. Música, fuego, recreaciones históricas y visitas nocturnas al altar de los sacrificios bajo la luna llena de agosto.',
     lugar: 'Castro de Ulaca, Villaviciosa',
     imagen: '/images/agenda/luna-celta-real.png',
+    objectFit: 'cover',
     accent: 'border-gold-800/30',
     bg: 'from-gold-950/60 to-granite-950/80',
     highlight: true,
@@ -34,8 +35,9 @@ const eventos = [
     dia: '6',
     descripcion:
       'Las fiestas en honor a San Juan Evangelista Ante Portam Latinam reúnen a vecinos de los cuatro núcleos. Misa solemne, procesión, música tradicional y la gastronomía de toda la vida.',
-    lugar: 'Solosancho · Iglesia de San Juan Evangelista',
+    lugar: 'Solosancho · Iglesia de Santo Tomás Apóstol',
     imagen: '/images/agenda/patron-solosancho.png',
+    objectFit: 'contain',
     accent: 'border-sierra-800/30',
     bg: 'from-sierra-950/60 to-granite-950/80',
     highlight: false,
@@ -52,6 +54,7 @@ const eventos = [
       'Sube al Castro de Ulaca al atardecer y descubre sus secretos a la luz de las antorchas. Guías especializados en cultura vetona acompañan el recorrido por la muralla y el altar.',
     lugar: 'Castro de Ulaca, Villaviciosa',
     imagen: '/images/agenda/ruta-nocturna.jpg',
+    objectFit: 'cover',
     accent: 'border-granite-700/30',
     bg: 'from-granite-800/40 to-granite-950/80',
     highlight: false,
@@ -68,6 +71,7 @@ const eventos = [
       'El municipio se viste de fiesta en julio alrededor del castillo medieval de Villaviciosa. Conciertos al aire libre, actividades para familias y la mejor gastronomía de la sierra.',
     lugar: 'Villaviciosa · Castillo medieval',
     imagen: '/images/agenda/villaviciosa-fiestas.jpg',
+    objectFit: 'cover',
     accent: 'border-gold-900/30',
     bg: 'from-gold-950/40 to-granite-950/80',
     highlight: false,
@@ -141,7 +145,7 @@ export default function AgendaCultural() {
                   <motion.img
                     src={ev.imagen}
                     alt={ev.titulo}
-                    className="w-full h-full object-cover"
+                    className={`w-full h-full ${ev.objectFit === 'contain' ? 'object-contain' : 'object-cover'}`}
                     loading="lazy"
                     whileHover={{ scale: 1.07 }}
                     transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
