@@ -35,7 +35,7 @@ const eventos = [
     descripcion:
       'Las fiestas en honor a San Juan Evangelista Ante Portam Latinam reúnen a vecinos de los cuatro núcleos. Misa solemne, procesión, música tradicional y la gastronomía de toda la vida.',
     lugar: 'Solosancho · Iglesia de Santo Tomás Apóstol',
-    imagen: '/images/agenda/patron-solosancho.png',
+    imagen: '/images/agenda/patron-solosancho.jpg',
     accent: 'border-sierra-800/30',
     bg: 'from-sierra-950/60 to-granite-950/80',
     highlight: false,
