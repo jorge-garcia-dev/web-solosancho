@@ -1,15 +1,5 @@
 import { MapPin, Phone, Mail, ExternalLink } from 'lucide-react'
 
-function ShieldLogo() {
-  return (
-    <svg viewBox="0 0 40 48" fill="none" className="w-9 h-9">
-      <path d="M20 2L4 9v16c0 11 7 20 16 23 9-3 16-12 16-23V9L20 2z" fill="#395e20" stroke="#e9c24a" strokeWidth="1.5" />
-      <path d="M20 10L11 14v10c0 6.5 4 12 9 14 5-2 9-7.5 9-14V14L20 10z" fill="#e9c24a" opacity="0.18" />
-      <path d="M16 22l3 3 6-6" stroke="#e9c24a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  )
-}
-
 const quickLinks = [
   'Sede Electrónica',
   'Cita Previa',
@@ -31,7 +21,11 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <ShieldLogo />
+              <img
+                src="/images/escudo.png"
+                alt="Escudo Oficial de Solosancho"
+                className="w-10 h-10 object-contain drop-shadow-lg"
+              />
               <div className="leading-tight">
                 <div className="text-white font-bold text-lg">Solosancho</div>
                 <div className="text-granite-600 text-xs">Ayuntamiento · Ávila</div>
