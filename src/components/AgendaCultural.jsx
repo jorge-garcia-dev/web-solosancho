@@ -1,11 +1,17 @@
 import { motion } from 'framer-motion'
 import { CalendarDays, MapPin, ArrowRight, Moon, Music, Star, Flame } from 'lucide-react'
 
+// Imágenes: Unsplash (licencia libre, sin atribución requerida)
+// luna-celta.jpg      → Guille Pozzi, hoguera en acantilado rocoso nocturno
+// fiestas-patronales  → Philip Weyer, gran hoguera festiva nocturna
+// ruta-nocturna.jpg   → Wowa Helbling, sendero rocoso de montaña
+// villaviciosa.jpg    → Anders Norén, pradera alpina con sendero
+
 const eventos = [
   {
     icon: Moon,
     categoria: 'Festival Vetón',
-    categoriaColor: 'bg-gold-900/60 text-gold-400 border-gold-800/40',
+    categoriaColor: 'bg-gold-900/70 text-gold-400 border-gold-800/40',
     titulo: 'Luna Celta',
     subtitulo: 'Castro de Ulaca',
     mes: 'AGO',
@@ -13,14 +19,15 @@ const eventos = [
     descripcion:
       'El Castro de Ulaca revive cada verano con la magia vetona. Música, fuego, recreaciones históricas y visitas nocturnas al altar de los sacrificios bajo la luna llena de agosto.',
     lugar: 'Castro de Ulaca, Villaviciosa',
+    imagen: '/images/agenda/luna-celta.jpg',
     accent: 'border-gold-800/30',
-    bg: 'from-gold-950/40 to-granite-950/60',
+    bg: 'from-gold-950/60 to-granite-950/80',
     highlight: true,
   },
   {
     icon: Star,
     categoria: 'Fiestas Patronales',
-    categoriaColor: 'bg-sierra-900/60 text-sierra-400 border-sierra-700/40',
+    categoriaColor: 'bg-sierra-900/70 text-sierra-400 border-sierra-700/40',
     titulo: 'Fiestas de Santo Tomás',
     subtitulo: 'Patrón del municipio',
     mes: 'DIC',
@@ -28,14 +35,15 @@ const eventos = [
     descripcion:
       'Las fiestas en honor al patrón Santo Tomás Apóstol reúnen a vecinos de los cuatro núcleos. Misa solemne, procesión, música tradicional y la gastronomía de toda la vida.',
     lugar: 'Solosancho · Iglesia de Santo Tomás',
+    imagen: '/images/agenda/fiestas-patronales.jpg',
     accent: 'border-sierra-800/30',
-    bg: 'from-sierra-950/40 to-granite-950/60',
+    bg: 'from-sierra-950/60 to-granite-950/80',
     highlight: false,
   },
   {
     icon: Flame,
     categoria: 'Patrimonio',
-    categoriaColor: 'bg-granite-800/60 text-granite-300 border-granite-600/40',
+    categoriaColor: 'bg-granite-800/70 text-granite-300 border-granite-600/40',
     titulo: 'Ruta Nocturna al Castro',
     subtitulo: 'Visita guiada',
     mes: 'VER',
@@ -43,14 +51,15 @@ const eventos = [
     descripcion:
       'Sube al Castro de Ulaca al atardecer y descubre sus secretos a la luz de las antorchas. Guías especializados en cultura vetona acompañan el recorrido por la muralla y el altar.',
     lugar: 'Castro de Ulaca, Villaviciosa',
+    imagen: '/images/agenda/ruta-nocturna.jpg',
     accent: 'border-granite-700/30',
-    bg: 'from-granite-800/30 to-granite-950/60',
+    bg: 'from-granite-800/40 to-granite-950/80',
     highlight: false,
   },
   {
     icon: Music,
     categoria: 'Cultura',
-    categoriaColor: 'bg-gold-950/60 text-gold-500 border-gold-900/40',
+    categoriaColor: 'bg-gold-950/70 text-gold-500 border-gold-900/40',
     titulo: 'Fiestas de Villaviciosa',
     subtitulo: 'Verano en el castillo',
     mes: 'JUL',
@@ -58,8 +67,9 @@ const eventos = [
     descripcion:
       'El municipio se viste de fiesta en julio alrededor del castillo medieval de Villaviciosa. Conciertos al aire libre, actividades para familias y la mejor gastronomía de la sierra.',
     lugar: 'Villaviciosa · Castillo medieval',
+    imagen: '/images/agenda/villaviciosa-fiestas.jpg',
     accent: 'border-gold-900/30',
-    bg: 'from-gold-950/30 to-granite-950/60',
+    bg: 'from-gold-950/40 to-granite-950/80',
     highlight: false,
   },
 ]
@@ -122,53 +132,67 @@ export default function AgendaCultural() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className={`relative rounded-2xl border ${ev.accent} bg-gradient-to-b ${ev.bg} p-6 overflow-hidden`}
-                style={{ backdropFilter: 'blur(6px)' }}
+                whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                className={`rounded-2xl border ${ev.accent} overflow-hidden`}
+                style={{ background: 'rgba(15,12,10,0.7)', backdropFilter: 'blur(6px)' }}
               >
-                {/* Highlight badge for featured event */}
-                {ev.highlight && (
-                  <div className="absolute top-4 right-4 px-2.5 py-1 rounded-full bg-gold-600 text-white text-[10px] font-bold uppercase tracking-widest">
-                    Destacado
-                  </div>
-                )}
+                {/* ── Imagen de cabecera con zoom en hover ── */}
+                <div className="relative h-48 overflow-hidden">
+                  <motion.img
+                    src={ev.imagen}
+                    alt={ev.titulo}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    whileHover={{ scale: 1.07 }}
+                    transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                  />
+                  {/* Gradient overlay sobre la imagen */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
-                <div className="flex items-start gap-5">
-                  {/* Date block */}
-                  <div
-                    className="flex-shrink-0 w-16 rounded-xl flex flex-col items-center justify-center py-3 text-center border border-white/8"
-                    style={{ background: 'rgba(0,0,0,0.35)' }}
-                  >
-                    <span className="text-white/40 text-[10px] font-bold uppercase tracking-widest leading-none">
-                      {ev.mes}
-                    </span>
-                    <span className="text-white text-2xl font-black font-heading leading-tight mt-0.5">
-                      {ev.dia}
-                    </span>
-                  </div>
-
-                  {/* Content */}
-                  <div className="flex-1 min-w-0">
-                    {/* Category badge */}
-                    <span
-                      className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-widest border mb-3 ${ev.categoriaColor}`}
-                    >
-                      <Icon className="w-3 h-3" />
-                      {ev.categoria}
-                    </span>
-
-                    <h3 className="text-white text-xl font-bold leading-tight mb-0.5">
-                      {ev.titulo}
-                    </h3>
-                    <p className="text-granite-500 text-xs mb-3">{ev.subtitulo}</p>
-                    <p className="text-granite-400 text-sm leading-relaxed mb-4">
-                      {ev.descripcion}
-                    </p>
-
-                    <div className="flex items-center gap-1.5 text-granite-600 text-xs">
-                      <MapPin className="w-3.5 h-3.5 flex-shrink-0" />
-                      {ev.lugar}
+                  {/* Badge destacado */}
+                  {ev.highlight && (
+                    <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-gold-600 text-white text-[10px] font-bold uppercase tracking-widest">
+                      Destacado
                     </div>
+                  )}
+
+                  {/* Fecha flotando sobre la imagen */}
+                  <div className="absolute bottom-3 left-4 flex items-end gap-3">
+                    <div
+                      className="flex flex-col items-center justify-center w-14 py-2 rounded-xl text-center border border-white/15"
+                      style={{ background: 'rgba(0,0,0,0.55)', backdropFilter: 'blur(8px)' }}
+                    >
+                      <span className="text-white/50 text-[9px] font-bold uppercase tracking-widest leading-none">
+                        {ev.mes}
+                      </span>
+                      <span className="text-white text-xl font-black font-heading leading-tight">
+                        {ev.dia}
+                      </span>
+                    </div>
+                    <div>
+                      <span
+                        className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-widest border ${ev.categoriaColor}`}
+                        style={{ backdropFilter: 'blur(8px)' }}
+                      >
+                        <Icon className="w-3 h-3" />
+                        {ev.categoria}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* ── Contenido de la tarjeta ── */}
+                <div className="p-6">
+                  <h3 className="text-white text-xl font-bold leading-tight mb-0.5">
+                    {ev.titulo}
+                  </h3>
+                  <p className="text-granite-500 text-xs mb-3">{ev.subtitulo}</p>
+                  <p className="text-granite-400 text-sm leading-relaxed mb-4">
+                    {ev.descripcion}
+                  </p>
+                  <div className="flex items-center gap-1.5 text-granite-600 text-xs">
+                    <MapPin className="w-3.5 h-3.5 flex-shrink-0" />
+                    {ev.lugar}
                   </div>
                 </div>
               </motion.article>
