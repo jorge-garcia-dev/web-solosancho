@@ -102,7 +102,7 @@ export default function Ulaca() {
                 vetones. No existe otro igual en toda la Hispania prerromana.
               </p>
               <p className="text-white/60">
-                En Solosancho, junto a la iglesia de Santo Tomás Apóstol, puedes contemplar
+                En Solosancho, junto a la iglesia de San Juan Evangelista, puedes contemplar
                 un <strong className="text-white">verraco</strong> recuperado del propio castro:
                 escultura zoomorfa de granito —toro o cerdo— que simboliza la identidad de la
                 cultura vetona, dispersa por toda la meseta ibérica pero con especial
