@@ -19,7 +19,7 @@ const eventos = [
     descripcion:
       'El Castro de Ulaca revive cada verano con la magia vetona. Música, fuego, recreaciones históricas y visitas nocturnas al altar de los sacrificios bajo la luna llena de agosto.',
     lugar: 'Castro de Ulaca, Villaviciosa',
-    imagen: '/images/agenda/luna-celta.jpg',
+    imagen: '/images/agenda/luna-celta-real.png',
     accent: 'border-gold-800/30',
     bg: 'from-gold-950/60 to-granite-950/80',
     highlight: true,
